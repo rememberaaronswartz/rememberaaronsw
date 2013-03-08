@@ -1,14 +1,22 @@
 # Remember Aaron Swartz
 
+This is the open source content and code for the [Remember Aaron Swartz site](http://www.rememberaaronsw.com/).
+
 ## How to Contribute
 
-Fork this repository, create a new post in memories (you can just copy an existing one), and send a pull request. When the pull request is accepted, the site will be updated with your memory in about 5 minutes.
+This site uses the Jekyll blogging engine to manage individual memories. Each memory is an independent file with
+metadata specifying its URL and date of posting. The content itself is written in Markdown, which Aaron
+contributed feedback to.
 
-If you have rake installed, there is a rake task to create a new memory:
+The easiest way to add a new memory is to fork the repository and use Github's editing tools to add a new file that
+follows a valid template. Validate types of memory are: `image`, `quote` (with a link to relevant article), or `post`
+(an original contribution). Feel free to browse the existing examples and use them for inspiration.
+
+If you'd like to clone the repository locally, there is a Rake task to help you out:
 
 `rake new[type,title,author]`
 
-note: please use '-' to connect words in title and author.
+*N.B.* Please hyphenate title and author to create proper permalinks.
 
 <pre>
 | Name   | Description                                        | Default            |
@@ -18,20 +26,20 @@ note: please use '-' to connect words in title and author.
 | author | Author of the memory                               | family-and-friends |
 </pre>
 
-## About
-
-Open source code for the [Remember Aaron Swartz site](http://www.rememberaaronsw.com/).
+Once you're done, submit a standard Github pull request. Once the pull request is accepted, the live site 
+will be updated with your memory in about 5 minutes.
 
 ## Other Uses
 
-Please use this site as a template for creating other remembrance sites. It is really easy to run (just add webserver) and we are actually just running in on Amazon S3. But any vanilla webserver would do a great job of hosting this site.
+Please feel free to use this site as a template for creating other remembrance sites. Like other Jekyll sites, it's 
+easy and cheap to run (for example, on Amazon S3, which is what we use.) But any webserver will do.
 
 ## Ways to Help
 
 If you would like to help with this site, here are a few things that we haven't been able to get around to:
 
-* Prettyify the newpost form
-* Make the newpost form a self submission form using github oauth providers.
+* Prettyify the newpost form, an attempt to automate the submission process.
+* Make the newpost form a self submission form using Github oauth.
 
 ## Contributors
 
