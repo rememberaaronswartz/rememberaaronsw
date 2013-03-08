@@ -18,13 +18,11 @@ If you'd like to clone the repository locally, there is a Rake task to help you 
 
 *N.B.* Please hyphenate title and author to create proper permalinks.
 
-<pre>
 | Name   | Description                                        | Default            |
-+--------+----------------------------------------------------+--------------------+
+|--------|----------------------------------------------------|--------------------|
 | type   | Memory type. Can be one of image, quote, or post.  | post               |
 | title  | Title of the memory                                | a-memory           |
 | author | Author of the memory                               | family-and-friends |
-</pre>
 
 Once you're done, submit a standard Github pull request. Once the pull request is accepted, the live site 
 will be updated with your memory in about 5 minutes.
