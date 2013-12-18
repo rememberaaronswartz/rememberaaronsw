@@ -171,10 +171,10 @@
         });
       };
 
-      this.writePullRequest = function(pullOptions, branch, path, content, message, cb) {
+      this.writePullRequest = function(pullOptions, branch, path, content, encoding, message, cb) {
         updateTree(branch, function(err, latestCommit) {
           if (err) return cb(err);
-          that.postBlob(content, function(err, blob) {
+          that.postBlob(content, encoding, function(err, blob) {
             if (err) return cb(err);
             that.updateTree(latestCommit, path, blob, function(err, tree) {
               if (err) return cb(err);
@@ -254,13 +254,11 @@
       // Post a new blob object, getting a blob SHA back
       // -------
 
-      this.postBlob = function(content, cb) {
-        if (typeof(content) === "string") {
-          content = {
-            "content": content,
-            "encoding": "utf-8"
-          };
-        }
+      this.postBlob = function(content, encoding, cb) {
+            content = {
+                "content": content,
+                "encoding": encoding
+            };
 
         _request("POST", repoPath + "/git/blobs", content, function(err, res) {
           if (err) return cb(err);
@@ -420,11 +418,10 @@
 
       // Write file contents to a given branch and path
       // -------
-
-      this.write = function(branch, path, content, message, cb) {
+      this.write = function(branch, path, content, message, encoding, cb) {
         updateTree(branch, function(err, latestCommit) {
           if (err) return cb(err);
-          that.postBlob(content, function(err, blob) {
+          that.postBlob(content, encoding, function(err, blob) {
             if (err) return cb(err);
             that.updateTree(latestCommit, path, blob, function(err, tree) {
               if (err) return cb(err);

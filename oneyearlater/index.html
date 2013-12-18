@@ -1,0 +1,130 @@
+---
+title: Remember Aaron Swartz
+category: oneyearlater
+---
+<html>
+<head>
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/stylesheets/reset.css"/>
+    <link rel="stylesheet" href="/stylesheets/tribute.css"/>
+    <link rel="stylesheet" href="/stylesheets/tributeform.css"/>
+    <link rel="stylesheet" href="/stylesheets/font-awesome.css"/>
+    <link rel="alternate" type="application/rss+xml" href="rss.xml" title="Remember Aaron Swartz">
+    <link rel="icon" type="image/png" href="/images/aaronsw-icon.png">
+
+    <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+
+    <script src='/javascript/jquery.wookmark.js'></script>
+    <script src='/javascript/jquery.imagesloaded.js'></script>
+    <script src='/javascript/base64.js'></script>
+    <script src='/javascript/underscore-min.js'></script>
+    <script src='/javascript/github.js'></script>
+    <script src='/javascript/tribute.js'></script>
+    <script src='/javascript/oneyearform.js'></script>
+
+    {% include analytics.html %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+    <meta property="og:title" content="{{ page.title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://farm3.staticflickr.com/2552/3835494997_edc2e1dc12.jpg"/>
+    <meta property="og:url" content="http://www.rememberaaronsw.com"/>
+    <meta property="og:site_name" content="Celebrating Aaron Swartz"/>
+    <meta property="og:admins" content="1800517"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body class="index categories oneyear">
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="wrapper">
+    <header>
+        <h1> <a href="/">{{ page.title }}</a></h1>
+        {% include oneyearlinks.html %}
+        <div class="share-buttons">
+            <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
+            <div class="fb-like" data-href="http://www.rememberaaronsw.com/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+        </div>
+    </header>
+
+    <h2 class="tribute-header">Gone, but never forgotten. </h2>
+
+    <div id="upper-main">
+
+        <div id="memorial-text">
+            Aaron had a unique ability to use technology to empower people, democratize access to information, and organize movements.
+            One year following Aaron's death, leave your reflection on how Aaron's courage and vision has changed your path as we continue to mourn his loss and celebrate his life.
+        </div>
+
+        <div class="left-side">
+            <img class="oneyear-image" src="/images/placeHolderImage.jpg" alt="Pulpit rock">
+            <ul id="oneyear-links">
+                <li> Nominate someone for the <a target='_blank' href=''> Aaron Swartz Award. </a> </li>
+                <li> Support the movement to <a target='_blank' href=''> reform the Computer Fraud and Abuse Act.</a> </li>
+            </ul>
+        </div>
+
+        <div id="formwrapper" class="right-side">
+            <div class="form">
+                <div class="content">
+                    <input name="name" type="text" id="name" class="input" placeholder="Name" />
+
+                    <input name="title" type="text" id="title" class="input" placeholder="Title of message" />
+
+                    <input name="URL" type="text" id="url" class="input" placeholder="Image URL" />
+
+                    <input name="link" type="text" id="link" class="input" placeholder="Link" />
+
+                    <input name="image" type="file" id="image" class="input" accept="image/*"/>
+
+                    <textarea name="message" class="input" id="message" placeholder="Message" maxlength="2000" cols="25" rows="6"></textarea>
+
+                </div>
+
+                <div class="footer">
+                    <input type="submit" name="submit" value="Submit" class="button" onclick="GetFormInputs()" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='main' style="clear: both;">
+        <ul id="memory_links">
+            {% for post in paginator.posts %}
+            <li><a rel="post" href="{{ post.url }}"></a></li>
+            {% endfor %}
+            {% if paginator.next_page %}
+            <li><a rel="next" href="/oneyearlater/page{{ paginator.next_page }}"></a></li>
+            {% endif %}
+        </ul>
+        <ul class='column memories'></ul>
+        <ul class='column memories'></ul>
+        <ul class='column memories'></ul>
+    </div>
+    <footer>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+    </footer>
+</div>
+
+
+<script>!function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, "script", "twitter-wjs");</script>
+</body>
+</html>

@@ -2,6 +2,7 @@ source:      .
 destination: ./_site
 plugins:     ./_plugins
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
-paginate: 10
-
+pagination: true
+paginate: 5
 permalink:   none
+category: oneyearlater
