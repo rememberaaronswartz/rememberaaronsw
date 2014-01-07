@@ -52,8 +52,7 @@ function writeToRepo(path, content, commitMessage, encoding){
     var pull = {
         title: commitMessage,
         body: "This request is automatically generated.",
-        base: "rememberaaronsw"+ ":" + "master",
-        head: "rememberaaronswartz" + ":" + "master"
+        base: "master"
     };
     repo.writePullRequest(pull, 'master', path, content, encoding, commitMessage, function(err) {
         if(err) {
