@@ -78,3 +78,13 @@ function addsHttp(link){
     }
     return link;
 }
+
+$(window).bind('resize', function() {
+    if($(window).width() > 500) {
+        $('#left-side').css('width', '50%');
+        $('#right-side').css('width', '47%');
+    } else {
+        $('#left-side').css('width', '100%');
+        $('#right-side').css('width', '100%');
+    }
+});

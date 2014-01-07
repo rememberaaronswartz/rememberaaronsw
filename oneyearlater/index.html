@@ -66,7 +66,7 @@ category: oneyearlater
             One year following Aaron's death, leave your reflection on how Aaron's courage and vision has changed your path as we continue to mourn his loss and celebrate his life.
         </div>
 
-        <div class="left-side">
+        <div id="left-side" class="left-side">
             <img class="oneyear-image" src="/images/placeHolderImage.jpg" alt="Pulpit rock">
             <ul id="oneyear-links">
                 <li> Nominate someone for the <a target='_blank' href=' http://act.demandprogress.org/survey/2013Nominations'> Aaron Swartz Award. </a> </li>
@@ -74,28 +74,26 @@ category: oneyearlater
             </ul>
         </div>
 
-        <div id="formwrapper" class="right-side">
-            <div class="form">
+            <div class="form" id="right-side">
                 <div class="content">
                     <input name="name" type="text" id="name" class="input" placeholder="Name" />
-
+                    <br>
                     <input name="title" type="text" id="title" class="input" placeholder="Title of message" />
-
+                    <br>
                     <input name="URL" type="text" id="url" class="input" placeholder="Image URL" />
-
+                    <br>
                     <input name="link" type="text" id="link" class="input" placeholder="Link" />
-
+                    <br>
                     <input name="image" type="file" id="image" class="input" accept="image/*"/>
-
+                    <br>
                     <textarea name="message" class="input" id="message" placeholder="Message" maxlength="2000" cols="25" rows="6"></textarea>
-
+                    <br>
                 </div>
 
                 <div class="footer">
                     <input type="submit" name="submit" value="Submit" class="button" onclick="GetFormInputs()" />
                 </div>
             </div>
-        </div>
     </div>
 
     <div id='main' style="clear: both;">
