@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
 
 * {
     margin: 0;
@@ -8,9 +7,10 @@
 }
 
 .form {
-    width: 500px;
     margin: 0 auto;
     position: relative;
+    float:left;
+    width: 47%;
 }
 
 .form .header {
@@ -33,10 +33,10 @@
 }
 
 .form .content .input {
-    width: 350px;
+    width: 90%;
     padding: 7px 7px;
 
-    font-family: Bree;
+    font-family: 'Georgia';
     color: #9d9e9e;
     text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
 
@@ -113,11 +113,6 @@
     padding: 1em;
     padding-top: 2.4em;
     width: 50%;
-}
-
-.right-side{
-    float:left;
-    width: 47%;
 }
 
 .tribute-header{
