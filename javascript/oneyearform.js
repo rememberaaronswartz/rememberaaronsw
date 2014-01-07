@@ -27,7 +27,7 @@ function GetFormInputs(){
 
     if(image && image.type.match(imageType)) {
         var fileName = timestamp+'-'+image.name;
-        message = message +' !['+ title +'](' + 'https://raw.github.com/michaelpai/rememberaaronsw/master/images/'+fileName +')';
+        message = message +' !['+ title +'](' + 'https://raw.github.com/rememberaaronswartz/rememberaaronsw/master/images/'+fileName +')';
         var reader = new FileReader();
         reader.onload = function(e) {
             writeToRepo('images/'+fileName, Base64.encode(reader.result), 'New one year message from '+name+' @ '+ timestamp+'[image]', 'base64');
@@ -48,7 +48,7 @@ function writeToRepo(path, content, commitMessage, encoding){
         auth: "basic"
     });
 
-    var repo = github.getRepo('michaelpai', 'rememberaaronsw');
+    var repo = github.getRepo('rememberaaronswartz', 'rememberaaronsw');
     var pull = {
         title: commitMessage,
         body: "This request is automatically generated.",
