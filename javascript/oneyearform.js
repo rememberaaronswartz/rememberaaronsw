@@ -48,11 +48,12 @@ function writeToRepo(path, content, commitMessage, encoding){
         auth: "basic"
     });
 
-    var repo = github.getRepo('michaelpai', 'rememberaaronsw');
+    var repo = github.getRepo('rememberaaronswartz', 'rememberaaronsw');
     var pull = {
         title: commitMessage,
         body: "This request is automatically generated.",
-        base: "master"
+        base: "rememberaaronsw"+ ":" + "master",
+        head: "rememberaaronswartz" + ":" + "master"
     };
     repo.writePullRequest(pull, 'master', path, content, encoding, commitMessage, function(err) {
         if(err) {
