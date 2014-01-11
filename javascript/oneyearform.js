@@ -36,16 +36,29 @@ function GetFormInputs(){
     var content = '---\nauthor: ' + name + '\ntitle: "' + title + '"\ndate: ' + timestamp + '\ntype: post\nlayout: default\nlink: '+link+'\n---\n'+message;
     title = title.replace(/\s+/g, '-');
     writeToRepo('oneyearlater/_posts/'+ timestamp +'-'+ title+'.md', content, 'New one year message from '+name+' @ '+ timestamp+'[message]', 'utf-8');
+    alert("Thank you. Your message will be displayed shortly.");
+    clearFormFields();
 }
 
 function writeToRepo(path, content, commitMessage, encoding){
-    var pullRequest = {pull_request:{"path": path, "content": content, "commit_message": commitMessage, "encoding": encoding}};
-    $.post( "http://localhost:9292/pull_request", JSON.stringify(pullRequest), function(data){
-        alert("Thank you. Your message will be displayed shortly.");
-        clearFormFields();
-    }).fail(function() {
+    var github = new Github({
+        username: "rememberaaronswartz",
+        password: "aaronjan11",
+        auth: "basic"
+    });
+
+    var repo = github.getRepo('rememberaaronswartz', 'rememberaaronsw');
+    var pull = {
+        title: commitMessage,
+        body: "This request is automatically generated.",
+        base: "master"
+    };
+    repo.writePullRequest(pull, 'master', path, content, encoding, commitMessage, function(err) {
+        if(err) {
             alert('There was an error, please try again later.');
-        });
+            return false;
+        }
+    });
 }
 
 function clearFormFields() {
